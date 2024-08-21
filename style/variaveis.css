@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Kumbh+Sans:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Kumbh+Sans:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+    /* colors of the body */
+    --background-color: #ffffff;
+    --secondary-color: black;
+    --contrast-color: #5d90ff;
+    /* body */
+
+    /* estilos apenas para botões */
+        /* cancelar */
+        --background-cancel-button: black;
+        --background-hover-cancel-button: rgb(255, 115, 0);
+        /* confirmar */
+        --background-confirm-button: rgba(0, 122, 255, 1);
+        --background-hover-confirm-button: rgb(1, 85, 175);
+        /* Medidas */
+        --padding-border-radius-buttons: 10px;  
+        /* Corretas */
+    --color-all-buttons: rgb(255, 255, 255); /* Cor de texto */
+    --background-inactive-button: #F9F8F8;
+    /* estilos apenas para botões */
+    
+    /* estilo apenas para tags input de entrada de dados */
+    --border-size-input: 2px;
+    --border-color-input: var(--secondary-color);
+    --border-radius-input: 12px;
+    --background-unfilled-input: var(--background-inactive-button);
+    --background-fulled-input: #D9D9D9;
+    /* estilo apenas para tags input de entrada de dados */
+
+    /* Texto */
+    --font-family-titulo: "Kumbh Sans", sans-serif;
+    --font-family-text: "Inter", sans-serif;
+    --text-size: 16px;
+    --page-title-size: 30px;
+    --sub-title-size: 20px;
+    --sub-title-weight: 500;
+    /* Texto */
+
+    --hover-background-option: #510091;
+    --hover-color-option: white;
+    --hover-padding-option: 15px;
+}

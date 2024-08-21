@@ -1,0 +1,2 @@
+# Dependências do projeto referem-se a bibliotecas, pacotes ou módulos externos que o seu projeto utiliza para funcionar corretamente. Em Python, essas dependências são frequentemente instaladas através de ferramentas como pip e são gerenciadas em um arquivo chamado requirements.txt.
+

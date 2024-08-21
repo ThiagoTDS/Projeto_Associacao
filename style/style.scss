@@ -1,0 +1,43 @@
+@import url('reset.css');
+@import url('variaveis.css');
+@import url('cadastro.css');
+
+
+*{
+    box-sizing: border-box;
+}
+html, body{
+    width: 100%;
+    height: 100vh;
+    font-family: var(--font-family-texto);
+}
+// Header
+header{
+    width: 100%;
+    
+    .nav-container{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        
+        height: 137px;
+        .nav-container__titulo{
+            font-size: 48px;
+            font-family: var(--font-family-titulo);
+            font-weight: 400;
+        }
+        .nav-container__botao{
+            font-weight: 700;
+            font-size: var(--text-size);
+            text-decoration: none;
+            color: var(--second-color);
+            padding: var(--hover-padding-option)
+        }
+        .nav-container__botao:hover{
+            background-color: var(--hover-background-option);
+            color: var(--hover-color-option);
+            border-radius: 12px;
+            
+        }
+    }
+}
