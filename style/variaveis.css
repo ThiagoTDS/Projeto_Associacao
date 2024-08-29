@@ -6,7 +6,6 @@
     --background-color: #ffffff;
     --secondary-color: black;
     --contrast-color: #5d90ff;
-    /* body */
 
     /* estilos apenas para botões */
         /* cancelar */
@@ -18,9 +17,9 @@
         /* Medidas */
         --padding-border-radius-buttons: 10px;  
         /* Corretas */
-    --color-all-buttons: rgb(255, 255, 255); /* Cor de texto */
-    --background-inactive-button: #F9F8F8;
-    /* estilos apenas para botões */
+        --color-all-buttons: rgb(255, 255, 255); /* Cor de texto */
+        --background-inactive-button: #F9F8F8;
+    
     
     /* estilo apenas para tags input de entrada de dados */
     --border-size-input: 2px;
@@ -34,7 +33,7 @@
     --font-family-titulo: "Kumbh Sans", sans-serif;
     --font-family-text: "Inter", sans-serif;
     --text-size: 16px;
-    --page-title-size: 30px;
+    --page-title-size: 25px;
     --sub-title-size: 20px;
     --sub-title-weight: 500;
     /* Texto */

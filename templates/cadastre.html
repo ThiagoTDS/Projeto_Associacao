@@ -9,62 +9,76 @@
     <link rel="stylesheet" href="/style/variaveis.css">
 </head>
 <body>
-    <h1 class="titulo">Cadastre</h1>
-    <form class="form-container" action="#" method="get">
-        <!-- Nome completo -->
-        <div class="form-nome-completo">
-            <label class="form-nome-completo__subtitulo" for="nome_completo">Nome Completo</label>
-            <input class="form-nome-completo__entrada" name="nome_completo" id="nome_completo" type="text" placeholder="Mario Andre Maia" required>
-            <span id="nome_error_message" style="color: red; display:none"></span>
+    <header>
+        <nav>
+            <a class="botao-voltar" href="\index.html">
+                <img src="/style/img/arrow-left-sm.svg" alt="seta para mirada para a esquerda">
+                <p>VOLTAR</p>
+            </a>
+        </nav>
+    </header>
+    <main> <!--Colunm-->
+        <div class="container"> <!--Row-->
+            <img src="/style/img/banner-lateral.png" alt="imagem na qual há uma marmita e duas mãos apoiando-a">
+            <form class="form-container" action="#" method="get">
+                <h1 class="titulo">Cadastro de doador</h1>
+                <!-- Nome completo -->
+                <div class="form-nome-completo">
+                    <label class="form-nome-completo__subtitulo" for="nome_completo">Nome Completo</label>
+                    <input class="form-nome-completo__entrada" name="nome_completo" id="nome_completo" type="text" placeholder="Mario Andre Maia" required>
+                    <span id="nome_error_message" style="color: red; display:none"></span>
+                </div>
+                <!-- Documentos -->
+                <div class="form-documento">
+                    <span class="form-container__subtitulo">Documento</span>
+                    <div class="form-documento__container">
+                        <!-- CPF -->
+                        <label class="form-documento__subtitulo" for="cpf">CPF</label>
+                        <input name="pessoa_documento" type="radio" id="cpf_opcao" value="cpf" onclick='mostrarCampo("cpf")'>
+                        <!-- CNPJ -->
+                        <label class="form-documento__subtitulo" for="cnpj">CNPJ</label>
+                        <input name="pessoa_documento" type="radio" id="cnpj_opcao" value="cnpj" onclick="mostrarCampo('cnpj')">
+                    </div>
+                    <input class="form-documento__entrada" name="cpf_numero" id="cpf_numero" type="text" placeholder="000.000.000-00" style="display:none">
+                    <span id="cpf_error_message" style="color: red; display:none"></span>
+                    <input class="form-documento__entrada" name="cnpj_numero" id="cnpj_numero" type="text" placeholder="00.000.000/0000-00" style="display:none">
+                    <span id="cnpj_error_message" style="color: red; display:none"></span>
+                </div>
+                <!-- Endereço -->
+                <div class="form-endereco">
+                    <label class="form-endereco__subtitulo" for="endereco">Endereço</label>
+                    <input class="form-endereco__entrada" name="endereco" id="endereco" type="text" placeholder="Avenida Paulista, 0000, São Paulo - SP">
+                    <span id="endereco_error_message" class="error-message" style="display:none;"></span>
+    
+                </div>
+                <!-- Datas -->
+                <div class="form-datas">
+                    <div class="data-doacao">
+                        <label class="data-doacao__subtitulo" for="data_doacao">Data doação</label>
+                        <input class="data-doacao__entrada" name="data_doacao" id="data_doacao_entrada" type="text" placeholder="24/12/2020">
+                        <span id="data_doacao_error_message" class="error-message" style="display:none;"></span>
+                    </div>
+                    <div class="data-validade">
+                        <label class="data-validade__subtitulo" for="data_validade">Data de validade</label>
+                        <input class="data-validade__entrada" name="data_validade" id="data_validade_entrada" type="text" placeholder="24/12/2021">
+                        <span id="data_validade_error_message" class="error-message" style="display:none;"></span>
+                    </div>
+                </div>
+                <!-- Quantidade e submit -->
+                <div class="form-qtde">
+                    <label for="quantidade_cestas">Quantidade de cesta(s)/item(s)</label>
+                    <input class="form-qtde__entrada" id="quantidade_cestas" name="quantidade_cestas" type="number" placeholder="5">
+                    <span id="quantidade_error_message" class="error-message" style="color: red; display:none;"></span>
+                </div>
+                <!-- Botões -->
+                <div class="buttons-container">
+                    <button class="buttons-container__cancelar" type="reset" value="reset" id="cancelar-botao">CANCELAR</button>
+                    <button class="buttons-container__enviar" type="submit" value="submit" id="submit-botao">ADICIONAR</button>
+                </div>
+            </form>
         </div>
-        <!-- Documentos -->
-        <div class="form-documento">
-            <span class="form-container__subtitulo">Documento</span>
-            <div class="form-documento__container">
-                <!-- CPF -->
-                <label class="form-documento__subtitulo" for="cpf">CPF</label>
-                <input name="pessoa_documento" type="radio" id="cpf_opcao" value="cpf" onclick='mostrarCampo("cpf")'>
-                <!-- CNPJ -->
-                <label class="form-documento__subtitulo" for="cnpj">CNPJ</label>
-                <input name="pessoa_documento" type="radio" id="cnpj_opcao" value="cnpj" onclick="mostrarCampo('cnpj')">
-            </div>
-            <input class="form-documento__entrada" name="cpf_numero" id="cpf_numero" type="text" placeholder="000.000.000-00" style="display:none">
-            <span id="cpf_error_message" style="color: red; display:none"></span>
-            <input class="form-documento__entrada" name="cnpj_numero" id="cnpj_numero" type="text" placeholder="00.000.000/0000-00" style="display:none">
-            <span id="cnpj_error_message" style="color: red; display:none"></span>
-        </div>
-        <!-- Endereço -->
-        <div class="form-endereco">
-            <label class="form-endereco__subtitulo" for="endereco">Endereço</label>
-            <input class="form-endereco__entrada" name="endereco" id="endereco" type="text" placeholder="Avenida Paulista, 0000, São Paulo - SP">
-            <span id="endereco_error_message" class="error-message" style="display:none;"></span>
-
-        </div>
-        <!-- Datas -->
-        <div class="form-datas">
-            <div class="data-doacao">
-                <label class="data-doacao__subtitulo" for="data_doacao">Data doação</label>
-                <input class="data-doacao__entrada" name="data_doacao" id="data_doacao_entrada" type="text" placeholder="24/12/2020">
-                <span id="data_doacao_error_message" class="error-message" style="display:none;"></span>
-            </div>
-            <div class="data-validade">
-                <label class="data-validade__subtitulo" for="data_validade">Data de validade</label>
-                <input class="data-validade__entrada" name="data_validade" id="data_validade_entrada" type="text" placeholder="24/12/2021">
-                <span id="data_validade_error_message" class="error-message" style="display:none;"></span>
-            </div>
-        </div>
-        <!-- Quantidade e submit -->
-        <div class="form-qtde">
-            <label for="quantidade_cestas">Quantidade de cesta(s)/item(s)</label>
-            <input class="form-qtde__entrada" id="quantidade_cestas" name="quantidade_cestas" type="number" placeholder="5">
-            <span id="quantidade_error_message" class="error-message" style="color: red; display:none;"></span>
-        </div>
-        <!-- Botões -->
-        <div class="buttons-container">
-            <button class="buttons-container__cancelar" type="reset" value="reset" id="cancelar-botao">CANCELAR</button>
-            <button class="buttons-container__enviar" type="submit" value="submit" id="submit-botao">ADICIONAR</button>
-        </div>
-    </form>
+        
+    </main>
     <script type="module" src="/app/cadastre.js"></script>
     
 </body>

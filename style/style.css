@@ -18,10 +18,10 @@ header .nav-container {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  height: 137px;
+  height: 100px;
 }
 header .nav-container .nav-container__titulo {
-  font-size: 48px;
+  font-size: var(--page-title-size);
   font-family: var(--font-family-titulo);
   font-weight: 400;
 }
