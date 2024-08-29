@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estoque</title>
+    <link rel="stylesheet" href="/style/reset.css">
+    <link rel="stylesheet" href="/style/estoque.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a class="botao-voltar" href="\index.html" target="_self">
+                <img src="/style/img/arrow-left-sm.svg" alt="seta para mirada para a esquerda">
+                <p>VOLTAR</p>
+            </a>
+        </nav>
+    </header>
+    <main>
+        <h1 class="titulo">Estoque</h1>
+        <div class="tabela"> <!--Tabela com barra de rolagem vertical-->
+            <table><!--Cabeçalhos-->
+                <thead>  
+                    <tr>
+                        <th>Código Cesta</th>
+                        <th>Quantidade</th>
+                        <th>Data Vencimento</th>
+                    </tr>
+                    
+                </thead>
+                <tbody id="tabela-corpo"><!--Os dados são inseridos-->
+                    <!-- <tr>
+                        <td>CST001</td>
+                        <td>50</td>
+                        <td>2024-09-15</td>
+                    </tr>
+                    <tr>
+                        <td>CST002</td>
+                        <td>30</td>
+                        <td>2024-10-01</td>
+                    </tr>
+                    <tr>
+                        <td>CST003</td>
+                        <td>75</td>
+                        <td>2024-12-20</td>
+                    </tr>
+                    <tr>
+                        <td>CST004</td>
+                        <td>40</td>
+                        <td>2024-11-05</td>
+                    </tr>
+                    <tr>
+                        <td>CST005</td>
+                        <td>20</td>
+                        <td>2024-10-15</td>
+                    </tr>
+                    <tr>
+                        <td>CST002</td>
+                        <td>30</td>
+                        <td>2024-10-01</td>
+                    </tr>
+                    <tr>
+                        <td>CST003</td>
+                        <td>75</td>
+                        <td>2024-12-20</td>
+                    </tr>
+                    <tr>
+                        <td>CST004</td>
+                        <td>40</td>
+                        <td>2024-11-05</td>
+                    </tr>
+                    <tr>
+                        <td>CST005</td>
+                        <td>20</td>
+                        <td>2024-10-15</td>
+                    </tr>
+                    <tr>
+                        <td>CST002</td>
+                        <td>30</td>
+                        <td>2024-10-01</td>
+                    </tr>
+                    <tr>
+                        <td>CST003</td>
+                        <td>75</td>
+                        <td>2024-12-20</td>
+                    </tr>
+                    <tr>
+                        <td>CST004</td>
+                        <td>40</td>
+                        <td>2024-11-05</td>
+                    </tr>
+                    <tr>
+                        <td>CST005</td>
+                        <td>20</td>
+                        <td>2024-10-15</td>
+                    </tr>
+                    <tr>
+                        <td>CST002</td>
+                        <td>30</td>
+                        <td>2024-10-01</td>
+                    </tr>
+                    <tr>
+                        <td>CST003</td>
+                        <td>75</td>
+                        <td>2024-12-20</td>
+                    </tr>
+                    <tr>
+                        <td>CST004</td>
+                        <td>40</td>
+                        <td>2024-11-05</td>
+                    </tr>
+                    <tr>
+                        <td>CST005</td>
+                        <td>20</td>
+                        <td>2024-10-15</td>
+                    </tr> -->
+                </tbody>
+            </table>
+        </div>
+    </main>
+    <aside><!--opções-->
+        
+        <nav>
+            <h2>Opções</h2>
+            <ul>
+                <li id="doarCestaBtn">Vamos doar</li>
+                <li id="descartarCestaBtn">Saida por quebra</li>
+            </ul>
+        </nav>
+    </aside>
+    <script src="/app/mostrar-dados-tabela.js"></script>
+</body>
+</html>
