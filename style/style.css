@@ -23,24 +23,31 @@ header {
 }
 header .nav-container {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
-  height: 100px;
+  height: 60px;
+  background-color: var(--background-nav);
 }
 header .nav-container .nav-container__titulo {
   font-size: var(--page-title-size);
   font-family: var(--font-family-title);
-  font-weight: 400;
+  font-weight: var(--font-weight-title);
+  padding-left: 15px;
 }
-header .nav-container .nav-container__botao {
-  font-weight: 700;
+header .nav-container .nav-container__lista {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+header .nav-container .nav-container__lista .nav-container__lista__item__ancora {
+  font-weight: var(--font-weight-nav-child);
   font-size: var(--text-size);
   text-decoration: none;
   color: var(--second-color);
   padding: var(--padding-hover-nav-child);
 }
-header .nav-container .nav-container__botao:hover {
+header .nav-container .nav-container__lista .nav-container__lista__item__ancora:hover {
   background-color: var(--background-hover-nav-child);
   color: var(--color-hover-nav-child);
-  border-radius: 12px;
+  border-radius: var(--border-radius-hover-nav-child);
 }/*# sourceMappingURL=style.css.map */

@@ -9,6 +9,7 @@
     --font-family-text: "Inter", sans-serif;
     --text-size: 16px;
     --font-weight-text: 400;
+    --font-weight-title: 700;
     --page-title-size: 25px;
     --sub-title-size: 20px;
     --sub-title-weight: 500;
@@ -39,7 +40,10 @@
     --color-nav-child: #ffffff;
     --padding-nav-child: 10px;
     --border-radius-nav-child: 8px;
+    --border-radius-hover-nav-child: 0;
     --background-hover-nav-child: rgb(3, 61, 208);
     --color-hover-nav-child: #ffffff;
-    --padding-hover-nav-child: 15px;
+    --padding-hover-nav-child: 21px 15px;
+    --border-radius-nav-child: 15px;
+    --font-weight-nav-child: 700;
 }
