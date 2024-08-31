@@ -13,16 +13,7 @@ header {
   width: 100%;
 }
 
-.botao-voltar {
-  width: 100px;
-  display: flex;
-  align-items: center;
-  font-weight: var(--font-weight-button-global);
-  font-size: var(--text-size);
-  text-decoration: none;
-  color: var(--second-color);
-  padding: var(--padding-hover-nav-child);
-}
+
 
 main {
   width: 100%;
@@ -44,7 +35,31 @@ main .container div {
   display: flex;
   justify-content: center;
 }
-
+.botao-voltar {
+  width: 100px;
+  display: flex;
+  align-items: center;
+  font-weight: var(--font-weight-button-global);
+  font-size: var(--text-size);
+  text-decoration: none;
+  color: var(--second-color);
+  padding: var(--padding-nav-child);
+  position: relative;
+  text-align: center;
+}
+.botao-voltar::before{
+  content: "";
+  background-image: url('./icons/arrow-left.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  position: absolute;
+  top: 50%;
+  left: 25%;
+  transform: translateY(-50%);
+}
 .form-container {
   font-family: var(--font-family-text);
   font-size: var(--text-size);

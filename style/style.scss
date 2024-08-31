@@ -1,6 +1,7 @@
 @import url('reset.css');
 @import url('variaveis.css');
 @import url('cadastro.css');
+@import url('estoque.css');
 
 *{
     box-sizing: border-box;
@@ -20,34 +21,142 @@ body{
 // Header
 header{
     width: 100%;
-    .nav-container{
+    .nav-container-h{
         display: flex;
         justify-content: space-between;
         align-items: center;
         height: 60px;
         background-color: var(--background-nav);
-        .nav-container__titulo{
+        font-family: var(--font-family-text);
+        .nav-container-h__titulo{
             font-size: var(--page-title-size);
             font-family: var(--font-family-title);
             font-weight: var(--font-weight-title);
             padding-left: 15px;
         }
-        .nav-container__lista{
+        .nav-container-h__lista{
             display: flex;
             align-items: center;
             justify-content: space-around;
+            .nav-container-h__lista__item{
 
-            .nav-container__lista__item__ancora{
-                font-weight: var(--font-weight-nav-child);
-                font-size: var(--text-size);
-                text-decoration: none;
-                color: var(--second-color);
-                padding: var(--padding-hover-nav-child);
+                .botao-voltar {
+                    width: 100px;
+                    display: flex;
+                    align-items: center;
+                    font-weight: var(--font-weight-button-global);
+                    font-size: var(--text-size);
+                    text-decoration: none;
+                    color: var(--second-color);
+                    padding: var(--padding-nav-child);
+                    position: relative;
+                    text-align: center;
+                }
+                .botao-voltar::before{
+                    content: "";
+                    background-image: url('./icons/arrow-left.svg');
+                    background-size: contain;
+                    background-repeat: no-repeat;
+                    display: inline-block;
+                    width: 10px;
+                    height: 10px;
+                    position: absolute;
+                    top: 50%;
+                    left: 25%;
+                    transform: translateY(-50%);
+                }
+                .nav-container-h__lista__item__ancora{
+                    font-weight: var(--font-weight-nav-child);
+                    font-size: var(--text-size);
+                    text-decoration: none;
+                    color: var(--second-color);
+                    padding: var(--padding-hover-nav-child);
+                }
+                .nav-container-h__lista__item__ancora:hover{
+                    background-color: var(--background-hover-nav-child);
+                    color: var(--color-hover-nav-child);
+                    border-radius: var( --border-radius-hover-nav-child); 
+                }
             }
-            .nav-container__lista__item__ancora:hover{
+        }
+    }
+}
+
+.tables-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px 0;
+    padding: 30px;
+    table{
+        width: 100%;
+        border-collapse: collapse;
+        overflow-y: auto;
+        max-height: 500px;
+        display: block;
+        font-family: var(--font-family-text);
+        thead{
+            position: sticky;
+            top: -1px;
+            background-color: var(--background-table-header);
+            z-index: 1;
+        }
+        tbody{
+            // display: block; /* Faz com que o tbody respeite o overflow */
+            max-height: 400px; /* Altura máxima do conteúdo rolável */
+            overflow-y: auto;  /* Rolagem vertical dentro do tbody */
+            
+        }
+        th, td{
+            border: 1px solid var(--border-color-table);
+            padding: 10px;
+            text-align: left;
+            width: calc(100%/ 10);
+            word-wrap: break-word;
+        }
+        th{
+            font-weight: bold;
+            background-color: var(--background-table-header);
+            color: var(--color-table-header)
+        }
+    }
+}
+.title {
+    font-size: var(--page-title-size);
+    font-family: var(--font-family-title); 
+    font-weight: var(--font-weight-title);
+}
+aside{
+    
+    .nav-container-v {
+        font-family: var(--font-family-text);
+        background-color: var(--background-nav);
+        border-radius: 8px;
+        padding: 40px;
+        height: 80%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        .nav-container-v__titulo {    
+            font-size: var(--sub-title-size);
+            font-weight: var(--sub-title-weight);
+
+        }
+        .nav-container-v__lista {
+            height: 100%;
+            .nav-container-v__lista__item{
+                margin: 10px 0;
+                text-align: center;
+                width: 100%;
+                background-color: var(--background-nav-child);
+                color: var(--color-nav-child);
+                padding: var(--padding-nav-child);
+                border-radius: var(--border-radius-nav-child);
+            }
+            .nav-container-v__lista__item:hover{
+                cursor: pointer;
                 background-color: var(--background-hover-nav-child);
-                color: var(--color-hover-nav-child);
-                border-radius: var( --border-radius-hover-nav-child); 
+
             }
         }
     }

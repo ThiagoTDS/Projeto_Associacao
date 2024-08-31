@@ -1,6 +1,8 @@
+@charset "UTF-8";
 @import url("reset.css");
 @import url("variaveis.css");
 @import url("cadastro.css");
+@import url("estoque.css");
 * {
   box-sizing: border-box;
 }
@@ -21,33 +23,134 @@ body {
 header {
   width: 100%;
 }
-header .nav-container {
+header .nav-container-h {
   display: flex;
   justify-content: space-between;
   align-items: center;
   height: 60px;
   background-color: var(--background-nav);
+  font-family: var(--font-family-text);
 }
-header .nav-container .nav-container__titulo {
+header .nav-container-h .nav-container-h__titulo {
   font-size: var(--page-title-size);
   font-family: var(--font-family-title);
   font-weight: var(--font-weight-title);
   padding-left: 15px;
 }
-header .nav-container .nav-container__lista {
+header .nav-container-h .nav-container-h__lista {
   display: flex;
   align-items: center;
   justify-content: space-around;
 }
-header .nav-container .nav-container__lista .nav-container__lista__item__ancora {
+header .nav-container-h .nav-container-h__lista .nav-container-h__lista__item .botao-voltar {
+  width: 100px;
+  display: flex;
+  align-items: center;
+  font-weight: var(--font-weight-button-global);
+  font-size: var(--text-size);
+  text-decoration: none;
+  color: var(--second-color);
+  padding: var(--padding-nav-child);
+  position: relative;
+  text-align: center;
+}
+header .nav-container-h .nav-container-h__lista .nav-container-h__lista__item .botao-voltar::before {
+  content: "";
+  background-image: url("./icons/arrow-left.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  position: absolute;
+  top: 50%;
+  left: 25%;
+  transform: translateY(-50%);
+}
+header .nav-container-h .nav-container-h__lista .nav-container-h__lista__item .nav-container-h__lista__item__ancora {
   font-weight: var(--font-weight-nav-child);
   font-size: var(--text-size);
   text-decoration: none;
   color: var(--second-color);
   padding: var(--padding-hover-nav-child);
 }
-header .nav-container .nav-container__lista .nav-container__lista__item__ancora:hover {
+header .nav-container-h .nav-container-h__lista .nav-container-h__lista__item .nav-container-h__lista__item__ancora:hover {
   background-color: var(--background-hover-nav-child);
   color: var(--color-hover-nav-child);
   border-radius: var(--border-radius-hover-nav-child);
+}
+
+.tables-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px 0;
+  padding: 30px;
+}
+.tables-container table {
+  width: 100%;
+  border-collapse: collapse;
+  overflow-y: auto;
+  max-height: 500px;
+  display: block;
+  font-family: var(--font-family-text);
+}
+.tables-container table thead {
+  position: sticky;
+  top: -1px;
+  background-color: var(--background-table-header);
+  z-index: 1;
+}
+.tables-container table tbody {
+  max-height: 400px; /* Altura máxima do conteúdo rolável */
+  overflow-y: auto; /* Rolagem vertical dentro do tbody */
+}
+.tables-container table th, .tables-container table td {
+  border: 1px solid var(--border-color-table);
+  padding: 10px;
+  text-align: left;
+  width: 10%;
+  word-wrap: break-word;
+}
+.tables-container table th {
+  font-weight: bold;
+  background-color: var(--background-table-header);
+  color: var(--color-table-header);
+}
+
+.title {
+  font-size: var(--page-title-size);
+  font-family: var(--font-family-title);
+  font-weight: var(--font-weight-title);
+}
+
+aside .nav-container-v {
+  font-family: var(--font-family-text);
+  background-color: var(--background-nav);
+  border-radius: 8px;
+  padding: 40px;
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+aside .nav-container-v .nav-container-v__titulo {
+  font-size: var(--sub-title-size);
+  font-weight: var(--sub-title-weight);
+}
+aside .nav-container-v .nav-container-v__lista {
+  height: 100%;
+}
+aside .nav-container-v .nav-container-v__lista .nav-container-v__lista__item {
+  margin: 10px 0;
+  text-align: center;
+  width: 100%;
+  background-color: var(--background-nav-child);
+  color: var(--color-nav-child);
+  padding: var(--padding-nav-child);
+  border-radius: var(--border-radius-nav-child);
+}
+aside .nav-container-v .nav-container-v__lista .nav-container-v__lista__item:hover {
+  cursor: pointer;
+  background-color: var(--background-hover-nav-child);
 }/*# sourceMappingURL=style.css.map */

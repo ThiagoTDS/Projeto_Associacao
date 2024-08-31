@@ -4,22 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Estoque</title>
+    <link rel="stylesheet" href="/style/style.css">
     <link rel="stylesheet" href="/style/reset.css">
-    <link rel="stylesheet" href="/style/estoque.css">
+    <link rel="stylesheet" href="/style/variaveis.css">
     <link rel="shortcut icon" href="/style/favicon/favicon.ico" type="image/x-icon">
 </head>
 <body>
     <header>
-        <nav>
-            <a class="botao-voltar" href="\index.html" target="_self">
-                <img src="/style/icons/arrow-left-sm.svg" alt="seta para mirada para a esquerda">
-                <p>VOLTAR</p>
-            </a>
+        <nav class="nav-container-h">
+            <ul class="nav-container-h__lista">
+                <li class="nav-container-h__lista__item">
+                    <a class="botao-voltar" href="\index.html" target="_self">VOLTAR</a>
+                </li>
+            </ul>
         </nav>
     </header>
     <main>
-        <h1 class="titulo">Estoque</h1>
-        <div class="tabela"> <!--Tabela com barra de rolagem vertical-->
+        <h1 class="title">Estoque</h1>
+        <div class="tables-container"> <!--Tabela com barra de rolagem vertical-->
             <table><!--Cabeçalhos-->
                 <thead>  
                     <tr>
@@ -120,11 +122,11 @@
         </div>
     </main>
     <aside><!--opções-->
-        <nav>
-            <h2>Opções</h2>
-            <ul>
-                <li id="doarCestaBtn">Vamos doar</li>
-                <li id="descartarCestaBtn">Saida por quebra</li>
+        <nav class="nav-container-v">
+            <h2 class="nav-container-v__titulo">Opções</h2>
+            <ul class="nav-container-v__lista">
+                <li class="nav-container-v__lista__item" id="doarCestaBtn">Vamos doar</li>
+                <li class="nav-container-v__lista__item" id="descartarCestaBtn">Saida por quebra</li>
             </ul>
         </nav>
     </aside>

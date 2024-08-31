@@ -38,12 +38,17 @@
     /* navs' child styles only */
     --background-nav-child: rgba(0, 122, 255, 1);
     --color-nav-child: #ffffff;
-    --padding-nav-child: 10px;
+    --padding-nav-child: 10px 40px;
     --border-radius-nav-child: 8px;
     --border-radius-hover-nav-child: 0;
     --background-hover-nav-child: rgb(3, 61, 208);
     --color-hover-nav-child: #ffffff;
-    --padding-hover-nav-child: 21px 15px;
+    --padding-hover-nav-child: 21px 15px; /* nav-h options only */
     --border-radius-nav-child: 15px;
     --font-weight-nav-child: 700;
+    /* Glogal tables' styles */
+    --background-table-header: rgba(0, 122, 255, 1); 
+    --border-color-table: #000000;
+    --color-table-header: #ffffff;
+
 }
