@@ -5,6 +5,7 @@ import validaDatas from './valida-datas.js';
 import validaQuantidade from './valida-quantidade.js';
 import validaEndereco from './valida-endereco.js';
 
+// Função para mostrar/ocultar campos de CPF e CNPJ
 window.mostrarCampo = function(tipo) {
     const cpfInput = document.getElementById('cpf_numero');
     const cnpjInput = document.getElementById('cnpj_numero');
@@ -26,6 +27,11 @@ window.mostrarCampo = function(tipo) {
         cpfInput.value = ''; // Limpa o campo CPF ao selecionar CNPJ
         cpfInput.style.backgroundColor = 'var(--background-unfilled-input)';
     }
+};
+
+// Função para atualizar a cor de fundo dos inputs com base no valor
+function updateInputBackground(input) {
+    input.style.backgroundColor = input.value ? 'var(--background-fulled-input)' : 'var(--background-unfilled-input)';
 }
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -42,6 +48,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const enderecoInput = document.getElementById('endereco');
     const enderecoErrorMessage = document.getElementById('endereco_error_message');
 
+    // Valida e exibe mensagens de erro para o nome
     if (nomeInput) {
         nomeInput.addEventListener('input', function() {
             validaNome(this);
@@ -51,6 +58,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
+    // Valida e exibe mensagens de erro para o CNPJ
     if (cnpjInput) {
         cnpjInput.addEventListener('input', function() {
             validaCNPJ(this);
@@ -59,20 +67,24 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
+    // Valida a quantidade de cestas
     if (quantidadeInput) {
         quantidadeInput.addEventListener('input', function() {
             validaQuantidade(this);
         });
     }
 
+    // Valida o endereço
     if (enderecoInput) {
         enderecoInput.addEventListener('input', function() {
             validaEndereco(this);
         });
     }
 
+    // Valida datas ao carregar a página
     validaDatas();
 
+    // Atualiza os estilos dos botões com base no preenchimento dos campos
     function updateButtonStyles() {
         let allFilled = true;
         let anyFilled = false;
@@ -87,25 +99,24 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
 
-        cancelarButton.style.backgroundColor = anyFilled ? 'var(--background-cancel-button)' : 'var(--background-inactive-button)';
-        submitButton.style.backgroundColor = allFilled ? 'var(--background-confirm-button)' : 'var(--background-inactive-button)';
-
-        submitButton.disabled = !allFilled;
+        cancelarButton.style.display = anyFilled ? 'block' : 'none';
+        submitButton.style.display = allFilled ? 'block' : 'none';
+        submitButton.disabled = !allFilled; 
     }
 
     updateButtonStyles();
 
+    // Atualiza a cor de fundo dos inputs e estilos dos botões
     inputs.forEach(input => {
-        if (input.value !== '') {
-            input.style.backgroundColor = 'var(--background-fulled-input)';
-        }
+        updateInputBackground(input);
 
         input.addEventListener('input', function() {
-            this.style.backgroundColor = this.value ? 'var(--background-fulled-input)' : 'var(--background-unfilled-input)';
+            updateInputBackground(this);
             updateButtonStyles();
         });
     });
 
+    // Valida e exibe mensagens de erro para o CPF
     if (cpfInput) {
         cpfInput.addEventListener('input', function() {
             ehUmCPF(this);
@@ -114,6 +125,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
+    // Limpa campos e estilos ao clicar no botão cancelar
     if (cancelarButton) {
         cancelarButton.addEventListener('click', function() {
             cpfErrorMessage.style.display = 'none';

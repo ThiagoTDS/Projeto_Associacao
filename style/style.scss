@@ -2,7 +2,6 @@
 @import url('variaveis.css');
 @import url('cadastro.css');
 
-
 *{
     box-sizing: border-box;
 }
@@ -11,10 +10,16 @@ html, body{
     height: 100vh;
     font-family: var(--font-family-texto);
 }
+
+body{
+    background-color: var(--background-color-body);
+    font-family: var(--font-family-text);
+    font-weight: var(--font-weight-text);
+    color: var(--text-color);
+}
 // Header
 header{
     width: 100%;
-    
     .nav-container{
         display: flex;
         justify-content: space-around;
@@ -23,7 +28,7 @@ header{
         height: 100px;
         .nav-container__titulo{
             font-size: var(--page-title-size);
-            font-family: var(--font-family-titulo);
+            font-family: var(--font-family-title);
             font-weight: 400;
         }
         .nav-container__botao{
@@ -31,11 +36,11 @@ header{
             font-size: var(--text-size);
             text-decoration: none;
             color: var(--second-color);
-            padding: var(--hover-padding-option)
+            padding: var(--padding-hover-nav-child)
         }
         .nav-container__botao:hover{
-            background-color: var(--hover-background-option);
-            color: var(--hover-color-option);
+            background-color: var(--background-hover-nav-child);
+            color: var(--color-hover-nav-child);
             border-radius: 12px;
             
         }

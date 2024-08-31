@@ -12,6 +12,8 @@ body, html {
 }
 
 body {
+  font-weight: var(--font-weight-text);
+  font-size: var(--text-size);
   display: grid;
   grid-template-columns: 80% 20%;
   grid-template-rows: 69px auto;
@@ -31,7 +33,7 @@ header {
   font-size: var(--text-size);
   text-decoration: none;
   color: var(--second-color);
-  padding: var(--hover-padding-option);
+  padding: var(--padding-hover-nav-child);
 }
 
 main {
@@ -42,7 +44,7 @@ main {
 }
 main .titulo {
   font-size: var(--page-title-size);
-  font-family: var(--font-family-titulo);
+  font-family: var(--font-family-title);
 }
 main .tabela {
   max-height: 500px; /* Limita a altura da tabela para criar a barra de rolagem */
@@ -69,7 +71,7 @@ aside {
   align-items: center;
 }
 aside nav {
-  background-color: var(--aside-background-color);
+  background-color: var(--background-nav);
   border-radius: 8px;
   padding: 40px;
   height: 80%;
@@ -88,13 +90,14 @@ aside nav ul li {
   margin: 10px 0;
   text-align: center;
   width: 100%;
-  background-color: var(--aside-options-background-color);
-  color: var(--aside-options-color);
-  padding: var(--aside-options-padding);
-  border-radius: var(--aside-options-border-radius);
+  background-color: var(--background-nav-child);
+  color: var(--color-nav-child);
+  padding: var(--padding-nav-child);
+  border-radius: var(--border-radius-nav-child);
 }
 aside nav ul li:hover {
   cursor: pointer;
+  background-color: var(--background-hover-nav-child);
 }
 
 .selected {

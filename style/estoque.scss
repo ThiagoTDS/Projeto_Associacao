@@ -11,6 +11,9 @@ body, html {
     width: 100%;
 }
 body{
+    font-weight: var(--font-weight-text);
+    font-size: var(--text-size);
+    
     display: grid;
     grid-template-columns: 80% 20%;
     grid-template-rows: 69px auto;
@@ -42,7 +45,7 @@ main {
     
     .titulo {
         font-size: var(--page-title-size);
-        font-family: var(--font-family-titulo); 
+        font-family: var(--font-family-title); 
     }
     
     .tabela {

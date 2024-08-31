@@ -6,6 +6,7 @@
 body {
   font-family: var(--font-family-text);
   font-size: var(--text-size);
+  font-weight: var(--font-weight-text);
 }
 
 header {
@@ -16,11 +17,11 @@ header {
   width: 100px;
   display: flex;
   align-items: center;
-  font-weight: 700;
+  font-weight: var(--font-weight-button-global);
   font-size: var(--text-size);
   text-decoration: none;
   color: var(--second-color);
-  padding: var(--hover-padding-option);
+  padding: var(--padding-hover-nav-child);
 }
 
 main {
@@ -55,7 +56,7 @@ main .container div {
 }
 .form-container .titulo {
   font-size: var(--page-title-size);
-  font-family: var(--font-family-titulo);
+  font-family: var(--font-family-title);
 }
 .form-container .form-nome-completo, .form-container .form-endereco, .form-container .form-qtde, .form-container .form-qtde-submit {
   display: flex;
@@ -70,8 +71,8 @@ main .container div {
   font-weight: var(--sub-title-weight);
 }
 .form-container .form-nome-completo .form-nome-completo__entrada {
-  border: var(--border-size-input) solid var(--border-color-input);
-  border-radius: var(--border-radius-input);
+  border: var(--border-size-button-global) solid var(--border-color-button-global);
+  border-radius: var(--border-radius-button-global);
   height: 40px;
   background-color: var(--background-unfilled-input);
 }
@@ -90,13 +91,13 @@ main .container div {
   margin: 5px 0 5px;
 }
 .form-container .form-documento .form-documento__entrada {
-  border: 2px solid rgb(0, 0, 0);
-  border-radius: var(--border-radius-input);
+  border: var(--border-size-button-global) solid var(--border-color-button-global);
+  border-radius: var(--border-radius-button-global);
   height: 40px;
   background-color: var(--background-unfilled-input);
 }
 .form-container .form-endereco {
-  border-radius: var(--border-radius-input);
+  border-radius: var(--border-radius-button-global);
 }
 .form-container .form-endereco .form-endereco__subtitulo {
   font-size: var(--sub-title-size);
@@ -104,8 +105,8 @@ main .container div {
 }
 .form-container .form-endereco .form-endereco__entrada {
   margin: 5px 0 5px;
-  border: var(--border-size-input) solid var(--border-color-input);
-  border-radius: var(--border-radius-input);
+  border: var(--border-size-button-global) solid var(--border-color-button-global);
+  border-radius: var(--border-radius-button-global);
   height: 40px;
   background-color: var(--background-unfilled-input);
 }
@@ -124,8 +125,8 @@ main .container div {
 .form-container .form-datas .data-doacao .data-doacao__entrada {
   margin: 5px 0 5px;
   width: 281px;
-  border: 2px solid rgb(0, 0, 0);
-  border-radius: var(--padding-border-radius-buttons);
+  border: var(--border-size-button-global) solid var(--border-color-button-global);
+  border-radius: var(--border-radius-button-global);
   height: 40px;
   text-align: center;
   background-color: var(--background-unfilled-input);
@@ -147,8 +148,8 @@ main .container div {
 .form-container .form-datas .data-validade .data-validade__entrada {
   margin: 5px 0 5px;
   width: 281px;
-  border: 2px solid rgb(0, 0, 0);
-  border-radius: var(--padding-border-radius-buttons);
+  border: var(--border-size-button-global) solid var(--border-color-button-global);
+  border-radius: var(--border-radius-button-global);
   height: 40px;
   text-align: center;
   background-color: var(--background-unfilled-input);
@@ -166,8 +167,8 @@ main .container div {
 .form-container .form-qtde .form-qtde__entrada {
   margin: 5px 0 5px;
   width: 97px;
-  border: 2px solid rgb(0, 0, 0);
-  border-radius: var(--padding-border-radius-buttons);
+  border: var(--border-size-button-global) solid var(--border-color-button-global);
+  border-radius: var(--border-radius-button-global);
   height: 40px;
   text-align: center;
   background-color: var(--background-unfilled-input);
@@ -177,23 +178,26 @@ main .container div {
   justify-content: space-between;
 }
 .form-container .buttons-container .buttons-container__cancelar {
-  background: var(--background-inactive-button);
-  border-radius: var(--padding-border-radius-buttons);
-  color: var(--color-all-buttons);
-  padding: var(--padding-border-radius-buttons);
+  background: var(--background-cancel-button);
+  border-radius: var(--border-radius-button-global);
+  color: var(--color-cancel-button);
+  padding: var(--padding-button-global);
   border: none;
-  font-weight: 900;
+  font-weight: var(--font-weight-button-global);
+  display: none; /* Standard; dependency: cadastre.js */
 }
 .form-container .buttons-container .buttons-container__cancelar:hover {
-  background: var(--background-hover-cancel-button);
+  background-color: var(--background-hover-cancel-button) !important;
+  cursor: pointer;
 }
 .form-container .buttons-container .buttons-container__enviar {
-  padding: var(--padding-border-radius-buttons);
-  border-radius: var(--padding-border-radius-buttons);
-  background: var(--background-inactive-button);
+  padding: var(--padding-button-global);
+  border-radius: var(--border-radius-button-global);
+  background: var(--background-confirm-button); 
   border: none;
-  font-weight: 900;
-  color: var(--color-all-buttons);
+  font-weight: var(--font-weight-button-global);
+  color: var(--color-confirm-button);
+  display: none; /* Standard display;dependency: cadastre.js  */
 }
 .form-container .buttons-container .buttons-container__enviar:hover {
   background-color: var(--background-hover-confirm-button);

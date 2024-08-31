@@ -2,53 +2,44 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Kumbh+Sans:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 :root {
-    /* colors of the body */
-    --background-color: #ffffff;
-    --secondary-color: black;
-    --contrast-color: #5d90ff;
-
-    /* estilos apenas para botões */
-        /* cancelar */
-        --background-cancel-button: black;
-        --background-hover-cancel-button: rgb(255, 115, 0);
-        /* confirmar */
-        --background-confirm-button: rgba(0, 122, 255, 1);
-        --background-hover-confirm-button: rgb(1, 85, 175);
-        /* Medidas */
-        --padding-border-radius-buttons: 10px;  
-        /* Corretas */
-        --color-all-buttons: rgb(255, 255, 255); /* Cor de texto */
-        --background-inactive-button: #F9F8F8;
-    
-    
-    /* estilo apenas para tags input de entrada de dados */
-    --border-size-input: 2px;
-    --border-color-input: var(--secondary-color);
-    --border-radius-input: 12px;
-    --background-unfilled-input: var(--background-inactive-button);
-    --background-fulled-input: #D9D9D9;
-    /* estilo apenas para tags input de entrada de dados */
-
-    /* Texto */
-    --font-family-titulo: "Kumbh Sans", sans-serif;
+    /* body's only color styles */
+    --background-color-body: #f7f7f7;
+    /* global text's style */
+    --font-family-title: "Kumbh Sans", sans-serif;
     --font-family-text: "Inter", sans-serif;
     --text-size: 16px;
+    --font-weight-text: 400;
     --page-title-size: 25px;
     --sub-title-size: 20px;
     --sub-title-weight: 500;
-    /* Texto */
-
-    --hover-background-option: #510091;
-    --hover-color-option: white;
-    --hover-padding-option: 15px;
-
-    /* Aside */
-    --aside-background-color: #D9D9D9;
-        /* options */
-        --aside-options-background-color: rgba(0, 122, 255, 1);
-        --aside-options-color: white;
-        --aside-options-padding: 10px;
-        --aside-options-border-radius: 8px;
-
-
+    --text-color: #000000;
+    /* button's cancel style for input*/
+    --background-cancel-button: black;
+    --background-hover-cancel-button: rgb(255, 115, 0);
+    --color-cancel-button: #ffffff;
+    /* buttons' confirm style for input */
+    --background-confirm-button: rgba(0, 122, 255, 1);
+    --background-hover-confirm-button: rgb(1, 85, 175);
+    --color-confirm-button: #ffffff;
+    --font-weight-confirm-button: 900;
+    /* global button's style  for input*/
+    --font-weight-button-global: 900;
+    --border-size-button-global: 2px;
+    --border-color-button-global: #000000;
+    --border-radius-button-global: 12px;
+    --padding-button-global: 10px;
+    --font-weight-button-global: 900;
+    /* global only input form styles */
+    --background-unfilled-input: inherit;
+    --background-fulled-input: #c7c7c7; 
+    /* navs' styles only  */
+    --background-nav: #e2e2e2;
+    /* navs' child styles only */
+    --background-nav-child: rgba(0, 122, 255, 1);
+    --color-nav-child: #ffffff;
+    --padding-nav-child: 10px;
+    --border-radius-nav-child: 8px;
+    --background-hover-nav-child: rgb(3, 61, 208);
+    --color-hover-nav-child: #ffffff;
+    --padding-hover-nav-child: 15px;
 }
