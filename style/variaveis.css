@@ -37,7 +37,7 @@
     --background-nav: #e2e2e2;
     /* navs' child styles only */
     --background-nav-child: rgba(0, 122, 255, 1);
-    --color-nav-child: #ffffff;
+    --color-nav-child: #000;
     --padding-nav-child: 10px 40px;
     --border-radius-nav-child: 8px;
     --border-radius-hover-nav-child: 0;

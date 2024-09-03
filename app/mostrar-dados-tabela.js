@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
-    fetch('/database/dados-cesta-teste.json')
+    fetch('/database/estoque.json')
         .then(response => {
             if (!response.ok) {
                 throw new Error('Erro ao carregar o arquivo JSON');
