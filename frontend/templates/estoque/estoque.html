@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estoque</title>
+    <link rel="stylesheet" href="/frontend/css/global/style.css">
+    <link rel="stylesheet" href="/frontend/css/global/reset.css">
+    <link rel="stylesheet" href="/frontend/css/global/variaveis.css">
+    <link rel="stylesheet" href="/frontend/css/estoque/estoque.css">
+    <link rel="shortcut icon" href="/style/favicon/favicon.ico" type="image/x-icon">
+</head>
+<body class="body-grid-header-main-aside">
+    <header>
+        <nav class="nav-container-h">
+            <a class="botao-voltar" href="/frontend/index.html" target="_self">VOLTAR</a>
+            <ul class="nav-container-h__lista">
+                <li class="nav-container-h__lista__item">
+                    <a class="nav-container-h__lista__item__ancora" target="_self"  href="/frontend/templates/cadastre/cadastre.html" aria-label="Página de Cadastro">CADASTRE</a>
+                </li>
+                <li class="nav-container-h__lista__item">
+                    <a class="nav-container-h__lista__item__ancora" target="_self" href="/frontend/templates/entrega/entrega.html" aria-label="Página de Doação">ENTREGA</a>
+                </li>
+                <li class="nav-container-h__lista__item">
+                    <a class="nav-container-h__lista__item__ancora" target="_self" href="/frontend/templates/doacao/doacao.html" aria-label="Página de Doação">DOAÇÃO</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h1 class="title">Estoque</h1>
+        <div class="tables-container"> <!--Tabela com barra de rolagem vertical-->
+            <table id="tabela-estoque"><!--Cabeçalhos-->
+                <thead>  
+                    <tr>
+                        <th>Id Código Cesta De Cadastro</th>
+                        <th>Quantidade Disponível</th>
+                        <th>Data Vencimento</th>
+                        <th>Nome Doador</th>
+                    </tr>
+                    
+                </thead>
+                <tbody id="tabela-corpo">
+                    <!-- Dados serão inseridos aqui dinamicamente -->
+                </tbody>
+            </table>
+        </div>
+    </main>
+    <aside><!--opções-->
+        <nav class="nav-container-v">
+            <h2 class="nav-container-v__titulo">Opções</h2>
+            <ul class="nav-container-v__lista">
+                <li class="nav-container-v__lista__item" id="doarCestaBtn">Vamos doar</li>
+                <li class="nav-container-v__lista__item" id="descartarCestaBtn">Saida por quebra</li>
+            </ul>
+        </nav>
+    </aside>
+    <script type="module" src="/frontend/js/estoque/estoque.js"></script>
+</body>
+</html>

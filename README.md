@@ -41,4 +41,34 @@ Contribuições são bem-vindas! Se você deseja colaborar com o projeto, siga o
 
 ---
 
+## Como executar
+
+1. No terminal do python, vá até o diretorio backend/ e execute: python api.py
+2. Através do live-server, acesse o index.html e o site deve estar funcionando.
+
 Antes de contribuir, por favor, certifique-se de que suas alterações seguem o padrão de código e as boas práticas estabelecidas no projeto. Também é importante garantir que novos recursos estejam bem documentados e testados.
+
+
+## Fluxo de operação
+
+### Cadastro de Doador (via cadastre.html):
+- O doador insere seus dados e a quantidade de cestas doadas.
+- O sistema verifica se o CPF ou CNPJ já existe. Caso sim, exibe os dados do doador para evitar duplicidade.
+- Se o doador já existe e tem cestas associadas, um novo id_cesta é gerado para a nova doação.
+
+### Registro no Estoque:
+
+- O sistema armazena as cestas doadas na tabela estoque com um novo id_cesta.
+- O estoque é atualizado com a quantidade disponível e a data de validade das cestas.
+
+### Doação e Saída de Cestas:
+
+- Ao realizar uma doação (por exemplo, 5 cestas), o mesmo id_cesta é utilizado para todas.
+- Se uma entrega parcial for realizada (3 cestas), o sistema ainda mantém o id_cesta ativo, com 2 cestas restantes no estoque.
+
+### Registro de Entregas:
+
+- Quando cestas são entregues, a tabela cestas_entregues é atualizada, removendo-as do estoque.
+- Se uma entrega é registrada na tabela cestas_entregues, significa que as cestas já saíram do estoque.
+
+## Funções do Backend
