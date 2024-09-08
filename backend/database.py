@@ -29,16 +29,26 @@ def execute_script(conn, script):
         print(f"Erro ao executar script: {e}")
         conn.rollback()
 
-def inserir_doador(nome_completo, cpf, cnpj, endereco, data_doacao, data_validade, quantidade_cestas):
-    """Insere um novo doador na tabela 'doadores'."""
+def inserir_doador(nome, cpf, cnpj, endereco, data_doacao, data_proximo_vencimento, quantidade_cesta):
+    """Insere um novo doador na tabela 'doadores' e atualiza a tabela 'estoque'."""
     try:
         conn = create_connection()
         cursor = conn.cursor()
 
         cursor.execute('''
-            INSERT INTO doadores (nome_completo, cpf, cnpj, endereco, data_doacao, data_validade, quantidade_cestas)
+            INSERT INTO doadores (nome, cpf, cnpj, endereco, data_doacao, data_proximo_vencimento, quantidade_cesta)
             VALUES (?, ?, ?, ?, ?, ?, ?)
-        ''', (nome_completo, cpf, cnpj, endereco, data_doacao, data_validade, quantidade_cestas))
+        ''', (nome, cpf, cnpj, endereco, data_doacao, data_proximo_vencimento, quantidade_cesta))
+
+         # Pegar o id_cesta recém-inserido
+        id_cesta_cadastro_fk = cursor.lastrowid
+        print(f"Novo id_cesta inserido: {id_cesta_cadastro_fk}")  # Log para verificar se o ID está sendo capturado corretamente
+
+        # Atualizar ou inserir a informação na tabela 'estoque'
+        cursor.execute('''
+            INSERT INTO estoque (id_cesta_cadastro_fk, quantidade_disponivel, data_proximo_vencimento, nome)
+            VALUES (?, ?, ?, ?)
+        ''', (id_cesta_cadastro_fk, quantidade_cesta, data_proximo_vencimento, nome))
 
         conn.commit()
     except Error as e:

@@ -2,8 +2,7 @@ from flask import Flask, request, jsonify
 from flask_cors import CORS
 from services.doador_service import adicionar_doador
 from services.entrega_service import registrar_entrega
-from services.estoque_service import obter_estoque
-from database import close_connection, create_connection
+from database import close_connection, create_connection, obter_estoque
 
 app = Flask(__name__)
 CORS(app)  # Habilita CORS para permitir requisições de outras origens (como o frontend)
@@ -12,7 +11,11 @@ CORS(app)  # Habilita CORS para permitir requisições de outras origens (como o
 @app.route('/add_doador', methods=['POST'])
 def add_doador():
     data = request.get_json()
-    nome_completo = data.get('nome_completo')
+
+    # Imprimir os dados recebidos para depuração
+    print('Dados recebidos:', data)
+
+    nome = data.get('nome')
     cpf = data.get('cpf')
     cnpj = data.get('cnpj')
     endereco = data.get('endereco')
@@ -22,11 +25,15 @@ def add_doador():
 
     # Lógica para inserir no banco de dados
     try:
-        adicionar_doador(nome_completo, cpf, cnpj, endereco, data_doacao, data_validade, quantidade_cestas)
+        adicionar_doador(nome, cpf, cnpj, endereco, data_doacao, data_validade, quantidade_cestas)
         return jsonify({"message": "Doador adicionado com sucesso!"}), 201
     except Exception as e:
-        return jsonify({"error": str(e)}), 400
-
+        error_message = str(e)
+        
+        if "UNIQUE constraint failed: doadores.cnpj" in error_message:
+            return jsonify({"message": "CNPJ já cadastrado"}), 400
+        
+        return jsonify({"message": f"Erro ao inserir doador: {error_message}"}), 500
 @app.route('/add_entrega', methods=['POST'])
 def add_entrega():
     """
@@ -35,37 +42,19 @@ def add_entrega():
     Excluir a cesta(que foi entregue) correspondente da tabela estoque.
     """
     data = request.get_json()
-    id_cesta = data.get('id_cesta')
+    print('Dados recebidos:', data)  # Adicione um log para verificar se os dados estão chegando
+    
+    id_cesta_cadastro_fk = data.get('id_cesta_cadastro_fk')
     quantidade_entregue = data.get('quantidade_entregue')
     data_saida = data.get('data_saida')
 
     conn = create_connection()
     try:
-        cursor = conn.cursor()
-
-        # Verificar se a cesta existe no estoque
-        cursor.execute("SELECT * FROM estoque WHERE id_cesta_cadastro_fk = ?", (id_cesta,))
-        cesta = cursor.fetchone()
-
-        if not cesta:
-            return jsonify({'message': "Cesta não encontrada no estoque."}), 404
-
-        # Inserir seleção da tabela estoque na tabela cestas_entregues
-        cursor.execute('''
-            INSERT INTO cestas_entregues (id_cesta_cadastro_fk, data_saida_estoque, quantidade_entregue)
-            VALUES (?, ?, ?)
-        ''', (id_cesta, data_saida, quantidade_entregue))
-
-        # Excluir da tabela estoque
-        cursor.execute("DELETE FROM estoque WHERE id_cesta_cadastro_fk = ?", (id_cesta,))
-
-        # Confirmar as mudanças no banco de dados
-        conn.commit()
-
+        registrar_entrega(id_cesta_cadastro_fk, quantidade_entregue, data_saida)
         return jsonify({"message": "Entrega registrada com sucesso!"}), 200
 
     except Exception as e:
-        conn.rollback()  # Reverter em caso de erro
+        # conn.rollback()  # Reverter em caso de erro
         return jsonify({"message": f"Erro ao registrar a entrega: {str(e)}"}), 500
     finally:
         close_connection(conn)
