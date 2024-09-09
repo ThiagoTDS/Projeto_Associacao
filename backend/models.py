@@ -1,0 +1,1 @@
+# Define os modelos para o banco de dados, se estiver usando algo como SQLAlchemy ou outros ORMs. Se estiver usando apenas SQLite e o acesso direto, pode não ser necessário.
