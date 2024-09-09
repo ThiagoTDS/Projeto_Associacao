@@ -143,7 +143,7 @@ document.getElementById('cadastreForm').addEventListener('submit', function(even
   
     // Capturar os dados do formulário
     const formData = {
-      nome_completo: document.getElementById('nome_completo').value,
+      nome: document.getElementById('nome_completo').value,
       cpf: document.getElementById('cpf_numero').value || null,
       cnpj: document.getElementById('cnpj_numero').value || null,
       endereco: document.getElementById('endereco').value,
@@ -164,11 +164,15 @@ document.getElementById('cadastreForm').addEventListener('submit', function(even
     .then(data => {
       if (data.message) {
         alert('Doador cadastrado com sucesso!');
+        // Opcional: limpar o formulário após sucesso
+        document.getElementById('cadastreForm').reset();
+        updateButtonStyles(); // Atualiza os estilos dos botõe
       } else {
-        alert('Ocorreu um erro: ' + data.error);
+        alert('Ocorreu um erro: ' + data.message);
       }
     })
     .catch((error) => {
-      console.error('Erro:', error);
+        alert("Erro ao adicionar doador. Por favor, tente novamente.");
+        console.error('Erro:', error);
     });
 });

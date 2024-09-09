@@ -21,13 +21,13 @@ document.addEventListener('DOMContentLoaded', () => {
                     data.forEach(item => {
                         // Verifica se 'item' é um objeto e contém as propriedades esperadas
                         if (item && typeof item === 'object') {
-                            const { id_cesta, quantidade_disponivel, data_proximo_vencimento, nome } = item;
+                            const { id_cesta_cadastro_fk, quantidade_disponivel, data_proximo_vencimento, nome } = item;
                             const tr = document.createElement('tr');
-                            tr.setAttribute('data-id', id_cesta);
+                            tr.setAttribute('data-id', id_cesta_cadastro_fk);
                             tr.setAttribute('data-quantidade', quantidade_disponivel);
 
                             tr.innerHTML = `
-                                <td>${id_cesta || 'Não disponível'}</td>
+                                <td>${id_cesta_cadastro_fk || 'Não disponível'}</td>
                                 <td>${quantidade_disponivel || 'Não disponível'}</td>
                                 <td>${data_proximo_vencimento || 'Não disponível'}</td>
                                 <td>${nome || 'Não disponível'}</td>
@@ -75,8 +75,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 'Content-Type': 'application/json',
             },
             body: JSON.stringify({
-                id_cesta: id,
-                quantidade_entregue: quantidade,
+                id_cesta_cadastro_fk: parseInt(id, 10),
+                quantidade_entregue: parseInt(quantidade, 10),
                 data_saida: new Date().toISOString().split('T')[0] // Data atual no formato YYYY-MM-DD
             }),
         })
