@@ -58,7 +58,8 @@ def add_entrega():
         return jsonify({"message": f"Erro ao registrar a entrega: {str(e)}"}), 500
     finally:
         close_connection(conn)
-
+        print("Entrega registrada e estoque atualizado com sucesso.")  # Log para verificar se a commit está funcionando
+        
 @app.route('/get_estoque', methods=['GET'])
 def get_estoque():
     try:

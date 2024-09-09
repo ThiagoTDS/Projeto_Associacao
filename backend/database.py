@@ -76,15 +76,16 @@ def obter_estoque():
         close_connection(conn)
         return []
     
-def registrar_entrega(id_cesta, quantidade_entregue, data_saida):
+def registrar_entrega(id_cesta_cadastro_fk, quantidade_entregue, data_saida):
     """Registra uma nova entrega na tabela 'cestas_entregues' e remove da tabela 'estoque'."""
     try:
         conn = create_connection()
         cursor = conn.cursor()
 
         # Verificar se a cesta existe no estoque
-        cursor.execute("SELECT * FROM estoque WHERE id_cesta_cadastro_fk = ?", (id_cesta,))
+        cursor.execute("SELECT * FROM estoque WHERE id_cesta_cadastro_fk = ?", (id_cesta_cadastro_fk,))
         cesta = cursor.fetchone()
+        print(f"Cesta encontrada: {cesta}")  # Adicione um log para ver a cesta
 
         if not cesta:
             raise Exception("Cesta não encontrada no estoque.")
@@ -93,10 +94,12 @@ def registrar_entrega(id_cesta, quantidade_entregue, data_saida):
         cursor.execute('''
             INSERT INTO cestas_entregues (id_cesta_cadastro_fk, data_saida_estoque, quantidade_entregue)
             VALUES (?, ?, ?)
-        ''', (id_cesta, data_saida, quantidade_entregue))
+        ''', (id_cesta_cadastro_fk, data_saida, quantidade_entregue))
 
         # Excluir a cesta da tabela estoque
-        cursor.execute("DELETE FROM estoque WHERE id_cesta_cadastro_fk = ?", (id_cesta,))
+        cursor.execute('''
+        DELETE FROM estoque WHERE id_cesta_cadastro_fk = ?
+        ''', (id_cesta_cadastro_fk,))
 
         conn.commit()
     except Error as e:
