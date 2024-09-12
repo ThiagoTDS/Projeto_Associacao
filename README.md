@@ -1,3 +1,5 @@
+<img src="frontend/img/ASSOCIAÇÃO BENEFICENTE.png">
+
 # Trabalho de extensão
 
 ## Descrição
@@ -43,8 +45,9 @@ Contribuições são bem-vindas! Se você deseja colaborar com o projeto, siga o
 
 ## Como executar
 
-1. No terminal do python, vá até o diretorio backend/ e execute: python api.py
-2. Através do live-server, acesse o index.html e o site deve estar funcionando.
+1. No terminal, execute: ```npm install```
+2. No terminal do python, vá até o diretorio backend/ e execute: ``python api.py``
+3. Através do live-server, acesse o index.html e o site deve estar funcionando.
 
 Antes de contribuir, por favor, certifique-se de que suas alterações seguem o padrão de código e as boas práticas estabelecidas no projeto. Também é importante garantir que novos recursos estejam bem documentados e testados.
 
@@ -71,4 +74,22 @@ Antes de contribuir, por favor, certifique-se de que suas alterações seguem o 
 - Quando cestas são entregues, a tabela cestas_entregues é atualizada, removendo-as do estoque.
 - Se uma entrega é registrada na tabela cestas_entregues, significa que as cestas já saíram do estoque.
 
-## Funções do Backend
+## Stack
+### Front-end
+1. HTML
+2. SCSS
+3. JavaScript
+4. React JS
+5. Vite
+
+### Back-end
+1. Python
+2. Flask
+3. Node.js
+4. Axios
+
+## Protótipo
+Figma: <a href="https://www.figma.com/design/E4fkoZzegtX9x6UMSaZ8xR/Associa%C3%A7%C3%A3o-Beneficente?t=yOg6tWdkTZIMSLc3-1">veja o projeto clicando aqui!</a>
+
+## Metodologia de desenvolvimento
+RAD
